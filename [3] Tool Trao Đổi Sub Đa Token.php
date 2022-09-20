@@ -41,11 +41,35 @@ $nam = date("Y");
 $weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool Trao Đổi Sub Token Đa Luồng\n".
-  $thuong.$xnhac."Bản Quyền Thưởng Channel\n".
-  $thuong.$trang."Mua Tool Liên Hệ Zalo:".$luc." 0335716306\n".
-  $thuong.$xduong."Web Bán Xu:".$do." http://thuongchannel.xyz\n".
-  $thuong.$hong."Web Tăng Like Follow:".$do." http://thuonglike.tk\n".
- $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
+  $luc."
+                     ccccc
+                ccccccccccccccc
+             ccccccccccccccccccccc
+            ccccccccccccccccccccccc
+           ccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccc•   •ccc•   •ccccccc
+          •cccc•      ccc       cccc•
+           cccc       ccc       cccc
+           cccc      ccccc     cccc
+            •cccccccccccccccccccc•
+             •cccccccc• •ccccccc•
+               ccccccccccccccccc
+                cc•c•c•c•c•c•cc
+     ccc        cccc c c c cccc       ccc
+    ccccc        ccccccccccccc       ccccc
+   ••ccccccc      •ccccccccc•     cccccccc•
+   cccccccccccccc    •••••    cccccccccccccc
+   cccc•••ccccccccccccc   ccccccccccc•••ccc•
+             ••ccccccccccccc ••c•••
+              cccc ••ccccccccccccc
+     cccccccccccccccccc ••ccccccccccccccccc
+     cccccccccc••••           ••ccccccccccc•
+      •ccccc•                      ••cccc••
+        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+ $thanh_xau.$luc."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
+ $thanh_xau.$luc."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
  //Key tool
 if (!$sock = @fsockopen('www.google.com', 80)) {echo 'Vui lòng bật kết nối mạng';
