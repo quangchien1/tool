@@ -504,7 +504,7 @@ while (true) {
 
             $Giojob = date("h:i:s");
             echo "\r                                                       ";
-            echo "\r\033[1;96m Thưởng Tool \033[91m|\033[93m{$vt}\033[91m| \033[96m$Giojob\033[91m | \033[93mFOLLOW\033[91m |\033[93m Thành Công \n";
+            echo "\r\033[1;96m Vũ Quang Chiến \033[91m|\033[93m{$vt}\033[91m| \033[96m$Giojob\033[91m | \033[93mFOLLOW\033[91m |\033[93m Thành Công \n";
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'LIN') {
                 echo $plus . "" . $luc . " Đang Chuyển Hướng Tới Tiktok";
                 @system('xdg-open https://www.tiktok.com/@' . $link);
@@ -774,23 +774,23 @@ function delay($delay)
 
     $plus = "\033[97m~\033[91m[\033[92m●\033[91m] \033[97m➻➤";
     for ($time = $delay; $time > -1; $time--) {
-        echo "\r$plus\033[1;93m Thưởng Tool\033[1;96m ~>        \033[1;95mL         \033[1;91m[\033[1;93m $time\033[1;91m ]";
+        echo "\r$plus\033[1;93m Vũ Quang Chiến\033[1;96m ~>        \033[1;95mL         \033[1;91m[\033[1;93m $time\033[1;91m ]";
         usleep($a);
-        echo "\r$plus\033[1;91m Thưởng Tool\033[0;93m  ~>       \033[0;96mLO        \033[0;91m[\033[0;93m $time\033[0;91m ] ";
+        echo "\r$plus\033[1;91m Vũ Quang Chiến\033[0;93m  ~>       \033[0;96mLO        \033[0;91m[\033[0;93m $time\033[0;91m ] ";
         usleep($a);
-        echo "\r$plus\033[1;92m Thưởng Tool\033[0;91m   ~>      \033[0;93mLOA       \033[0;91m[\033[0;93m $time\033[0;91m ]  ";
+        echo "\r$plus\033[1;92m Vũ Quang Chiến\033[0;91m   ~>      \033[0;93mLOA       \033[0;91m[\033[0;93m $time\033[0;91m ]  ";
         usleep($a);
-        echo "\r$plus\033[1;93m Thưởng Tool\033[0;92m    ~>     \033[0;91mLOAD      \033[0;91m[\033[0;93m $time\033[0;91m ]   ";
+        echo "\r$plus\033[1;93m Vũ Quang Chiến\033[0;92m    ~>     \033[0;91mLOAD      \033[0;91m[\033[0;93m $time\033[0;91m ]   ";
         usleep($a);
-        echo "\r$plus\033[1;94m Thưởng Tool\033[0;93m     ~>    \033[0;92mLOADI     \033[0;91m[\033[0;93m $time\033[0;91m ]    ";
+        echo "\r$plus\033[1;94m Vũ Quang Chiến\033[0;93m     ~>    \033[0;92mLOADI     \033[0;91m[\033[0;93m $time\033[0;91m ]    ";
         usleep($a);
-        echo "\r$plus\033[1;95m Thưởng Tool\033[0;94m      ~>   \033[0;93mLOADIN    \033[0;91m[\033[0;93m $time\033[0;91m ]   ";
+        echo "\r$plus\033[1;95m Vũ Quang Chiến\033[0;94m      ~>   \033[0;93mLOADIN    \033[0;91m[\033[0;93m $time\033[0;91m ]   ";
         usleep($a);
-        echo "\r$plus\033[1;96m Thưởng Tool\033[0;95m       ~>  \033[0;94mLOADING.  \033[0;91m[\033[0;93m $time\033[0;91m ]  ";
+        echo "\r$plus\033[1;96m Vũ Quang Chiến\033[0;95m       ~>  \033[0;94mLOADING.  \033[0;91m[\033[0;93m $time\033[0;91m ]  ";
         usleep($a);
-        echo "\r$plus\033[1;93m Thưởng Tool\033[0;95m        ~> \033[0;95mLOADING.. \033[0;91m[\033[0;93m $time\033[0;91m ] ";
+        echo "\r$plus\033[1;93m Vũ Quang Chiến\033[0;95m        ~> \033[0;95mLOADING.. \033[0;91m[\033[0;93m $time\033[0;91m ] ";
         usleep($a);
-        echo "\r$plus\033[1;91m Thưởng Tool\033[0;95m         ~>\033[0;96mLOADING...\033[0;91m[\033[0;93m $time\033[0;91m ]";
+        echo "\r$plus\033[1;91m Vũ Quang Chiến\033[0;95m         ~>\033[0;96mLOADING...\033[0;91m[\033[0;93m $time\033[0;91m ]";
         usleep($b);
     }
 }
