@@ -1,4 +1,4 @@
-<?php
+
 system("clear");
 error_reporting(0);
 
@@ -278,4 +278,4 @@ $ch2 = curl_exec($ch);
 curl_close($ch);
 return $ch2;
 }
-?>
+
