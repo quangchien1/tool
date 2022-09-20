@@ -1,3 +1,5 @@
+<?php
+system("clear");
 error_reporting(0);
 
 // Color
@@ -10,14 +12,43 @@ $xanhd =  "\033[1;92m";
 $hong =  "\033[1;92m";
 $trang =  "\033[1;92m";
 
-// Logo
-$logo = "$trang           ===================================\n        $xanhd  |$do     Termux Tool Auto TeamLike    $xanhd |\n$trang           ===================================\n\n";
-echo "$logo";
 
-for($a = 27;$a > -1;$a --){
-echo "$xanh"."=";usleep(20000);echo "$hong"."=";usleep(20000);
-}
-echo "\n\n";
+//Thời gian
+$weekday = date("l"); 
+$ngay = date("d"); 
+$thang = date("m"); 
+$nam = date("Y"); 
+$weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
+
+// Logo
+$logo = "$trang                     ccccc
+                ccccccccccccccc
+             ccccccccccccccccccccc
+            ccccccccccccccccccccccc
+           ccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccc•   •ccc•   •ccccccc
+          •cccc•      ccc       cccc•
+           cccc       ccc       cccc
+           cccc      ccccc     cccc
+            •cccccccccccccccccccc•
+             •cccccccc• •ccccccc•
+               ccccccccccccccccc
+                cc•c•c•c•c•c•cc
+     ccc        cccc c c c cccc       ccc
+    ccccc        ccccccccccccc       ccccc
+   ••ccccccc      •ccccccccc•     cccccccc•
+   cccccccccccccc    •••••    cccccccccccccc
+   cccc•••ccccccccccccc   ccccccccccc•••ccc•
+             ••ccccccccccccc ••c•••
+              cccc ••ccccccccccccc
+     cccccccccccccccccc ••ccccccccccccccccc
+     cccccccccc••••           ••ccccccccccc•
+      •ccccc•                      ••cccc••
+        ccc•     VŨ QUANG CHIẾN      ccc•\n\n";
+
+
 
 /*
 echo "$xanh =\> Nhập Text Request Wep TeamLike\n        $vang |> : $lucnhat";
@@ -204,15 +235,15 @@ $xanhd =  "\033[1;92m";
 $hong =  "\033[1;92m";
 $trang =  "\033[1;92m";
 for($time = $delay;$time > -1;$time--){
-echo "\r$xanh==\>$nau"."[$trang"."Anh Hào Tool$nau"."]$do=>$xanh"."Vui$xanhd Lòng$do Chờ |●○○○○|$vang [$lucnhat$time$vang"."]   ";
+echo "\r$xanh==\>$nau"."[$trang"."Vũ Quang Chiến$nau"."]$do=>$xanh"."Vui$xanhd Lòng$do Chờ |●○○○○|$vang [$lucnhat$time$vang"."]   ";
 usleep(270000);
-echo "\r$xanh==\>$nau"."[$lucnhat"."Anh Hào Tool$nau"."]$do=>$hong"."Vui$trang Lòng$xanhd Chờ |○●○○○|$vang [$lucnhat$time$vang"."]   ";
+echo "\r$xanh==\>$nau"."[$lucnhat"."Vũ Quang Chiến$nau"."]$do=>$hong"."Vui$trang Lòng$xanhd Chờ |○●○○○|$vang [$lucnhat$time$vang"."]   ";
 usleep(370000);
-echo "\r$xanh==\>$nau"."[$xanhd"."Anh Hào Tool$nau"."]$do=>$nau"."Vui$xanh Lòng$hong Chờ |○○●○○|$vang [$lucnhat$time$vang"."]   ";
+echo "\r$xanh==\>$nau"."[$xanhd"."Vũ Quang Chiến$nau"."]$do=>$nau"."Vui$xanh Lòng$hong Chờ |○○●○○|$vang [$lucnhat$time$vang"."]   ";
 usleep(270000);
-echo "\r$xanh==\>$nau"."[$hong"."Anh Hào Tool$nau"."]$do=>$do"."Vui$lucnhat Lòng$vang Chờ |○○○●○|$vang [$lucnhat$time$vang"."]   ";
+echo "\r$xanh==\>$nau"."[$hong"."Vũ Quang Chiến$nau"."]$do=>$do"."Vui$lucnhat Lòng$vang Chờ |○○○●○|$vang [$lucnhat$time$vang"."]   ";
 usleep(270000);
-echo "\r$xanh==\>$nau"."[$xanh"."Anh Hào Tool$nau"."]$do=>$hong"."Vui$nau Lòng$nau Chờ |○○○○●|$vang [$lucnhat$time$vang"."]   ";
+echo "\r$xanh==\>$nau"."[$xanh"."Vũ Quang Chiến$nau"."]$do=>$hong"."Vui$nau Lòng$nau Chờ |○○○○●|$vang [$lucnhat$time$vang"."]   ";
 usleep(270000);
 echo "\r                                            \r";
 }}
@@ -247,3 +278,4 @@ $ch2 = curl_exec($ch);
 curl_close($ch);
 return $ch2;
 }
+?>
