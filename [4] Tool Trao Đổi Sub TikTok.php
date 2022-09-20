@@ -419,7 +419,7 @@ while (true) {
             $vt++;
 
             $Giojob = date("h:i:s");
-            echo "\r\033[1;96m ThưởngTool \033[91m|\033[93m{$vt}\033[91m| \033[96m$Giojob\033[91m | \033[93mTIM\033[91m | \033[93m Thành Công \n";
+            echo "\r\033[1;96m  \033[91m|\033[93m{$vt}\033[91m| \033[96m$Giojob\033[91m | \033[93mTIM\033[91m | \033[93m Thành Công \n";
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'LIN') {
 
                 echo $plus . "" . $luc . " Đang Chuyển Hướng Tới Tiktok";
