@@ -1,0 +1,249 @@
+error_reporting(0);
+
+// Color
+$nau=  "\033[1;92m";
+$lucnhat =  "\033[1;92m";
+$do =  "\033[1;92m";
+$xanh = "\033[1;92m";
+$vang =  "\033[1;92m";
+$xanhd =  "\033[1;92m";
+$hong =  "\033[1;92m";
+$trang =  "\033[1;92m";
+
+// Logo
+$logo = "$trang           ===================================\n        $xanhd  |$do     Termux Tool Auto TeamLike    $xanhd |\n$trang           ===================================\n\n";
+echo "$logo";
+
+for($a = 27;$a > -1;$a --){
+echo "$xanh"."=";usleep(20000);echo "$hong"."=";usleep(20000);
+}
+echo "\n\n";
+
+/*
+echo "$xanh =\> Nhập Text Request Wep TeamLike\n        $vang |> : $lucnhat";
+$request = trim(fgets(STDIN));
+*/
+
+// Header Login
+$header_login = array(
+"Host:team-like.net",
+"Connection:keep-alive",
+"Cache-Control:max-age=0",
+"sec-ch-ua-mobile:?1",
+"Upgrade-Insecure-Requests:1",
+"Origin:https://team-like.net",
+"User-Agent:Mozilla/5.0 (Linux; Android 11; RMX2205) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.78 Mobile Safari/537.36",
+"Sec-Fetch-Site:same-origin",
+"Sec-Fetch-Mode:navigate",
+"Sec-Fetch-User:?1",
+"Referer:https://team-like.net/",
+);
+
+// Login
+$urllogin = "https://team-like.net/";
+$datalogin = "user=vuqngchien&password=vu22082004&remember=on&connect=";
+$login = sapi($urllogin,$datalogin,$header_login);
+$x = file_get_contents("cookie_teamlike.txt");
+$convert = json_encode($x,true);
+$ck = explode('\tPHPSESSID\t', $convert)[1];
+$PHPSESSID = explode('\n', $ck)[0];
+$ck = explode('\tPESAccExist\t', $convert)[1];
+$PESAccExist = explode('\n', $ck)[0];
+
+// Cookie
+$cookie = "PHPSESSID=$PHPSESSID;PESAccExist=$PESAccExist";
+
+// Header Wep
+$header = array(
+"Host:team-like.net",
+"Connection:keep-alive",
+"Cache-Control:max-age=0",
+"sec-ch-ua-mobile:?1",
+"Upgrade-Insecure-Requests:1",
+"Origin:https://team-like.net",
+"User-Agent:Mozilla/5.0 (Linux; Android 11; RMX2205) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.78 Mobile Safari/537.36",
+"Sec-Fetch-Site:same-origin",
+"Sec-Fetch-Mode:navigate",
+"Sec-Fetch-User:?1",
+"cookie:$cookie",
+);
+system("clear");
+
+// Get Info
+$urlinfo = "https://team-like.net/index.php";
+$getinfo = api($urlinfo,$header);
+$x = explode('<b id="c_coins">', $getinfo)[1];
+$coin = explode(' เหรียญ</b>', $x)[0];
+
+echo "$logo";
+for($a = 27;$a > -1;$a --){
+echo "$xanh"."=";usleep(20000);echo "$hong"."=";usleep(20000);
+}
+echo "\n";
+echo " => Username : $PESAccExist\n => Coins = $coin\n";
+for($a = 27;$a > -1;$a --){
+echo "$xanh"."=";usleep(20000);echo "$hong"."=";usleep(20000);
+}
+echo "\n\n";
+
+$stt = 0;
+while(true){
+// View Video
+// Get Id Video
+$urlgetidvideo = "https://team-like.net/index.php?page=module&md=youtube";
+$getidvideo = api($urlgetidvideo,$header);
+
+// Id Video
+$x = explode('<div class="website_block" id="',$getidvideo)[1];
+$idvideo = explode('">',$x)[0];
+
+if($idvideo !== ""){
+$type = "View Video";
+// Link View
+$urlview = "https://team-like.net/index.php?page=module&md=youtube&vid=$idvideo";
+$view = api($urlview,$header);
+
+// Delay Video
+$delay = explode('var length = ', $view)[1];
+$delay = explode(';', $delay)[0];
+
+// Delay View
+$timedelay = delay($delay);
+
+// Get Coin
+$urlgetcoin = "https://team-like.net/system/modules/youtube/process.php";
+
+// Data Get Coin
+$data = "data=$idvideo";
+$getcoin = sapi($urlgetcoin,$data,$header);
+if($getcoin !== 0){
+// Update Info
+$urlinfo = "https://team-like.net/index.php";
+$getinfo = api($urlinfo,$header);
+$x = explode('<b id="c_coins">', $getinfo)[1];
+$coin = explode(' เหรียญ</b>', $x)[0];
+
+// Number Up
+$stt ++;
+
+$done = success($coin,$idvideo,$type,$stt);
+}else{
+echo " Nhiệm Vụ Thất Bại :((\n";
+}
+
+}else{
+
+// View Wep
+// Get Id Wep
+$urlgetidwep = "https://team-like.net/system/modules/surf/process.php";
+// Data Get Id Wep
+$data = "get=1";
+$getidwep = sapi($urlgetidwep,$data,$header);
+// Link Wep
+$x = explode('https:\/\/',$getidwep)[1];
+$linkwep = explode('\/',$x)[0];
+// Id Wep
+$x = explode('"sid":"',$getidwep)[1];
+$idwep = explode('","title":"',$x)[0];
+
+if($idwep !== ""){
+// View Wep
+// Type
+$type = "View Wep";
+// Delay
+$delay = 60;
+$timedelay = delay($delay);
+
+// Get coin
+$urlgetcoin = "https://team-like.net/system/modules/surf/process.php";
+
+// Data Get Coin
+$data = "complete=1&sid=$idwep";
+$getcoin = sapi($urlgetcoin,$data,$header);
+
+if($getcoin !== 0){
+// Update Info
+$urlinfo = "https://team-like.net/index.php";
+$getinfo = api($urlinfo,$header);
+$x = explode('<b id="c_coins">', $getinfo)[1];
+$coin = explode(' เหรียญ</b>', $x)[0];
+
+// Number Up
+$stt ++;
+
+// Done
+$done = success($coin,$idwep,$type,$stt);
+}else{
+
+// Error
+echo " Nhiệm Vụ Thất Bại :((\n";
+}}
+}
+
+}
+
+function success($coin,$id,$type,$stt){
+$nau=  "\033[1;92m";
+$lucnhat =  "\033[1;92m";
+$do =  "\033[1;92m";
+$xanh = "\033[1;92m";
+$vang =  "\033[1;92m";
+$xanhd =  "\033[1;92m";
+$hong =  "\033[1;92m";
+$trang =  "\033[1;92m";
+echo "$xanh"."=$do"."[$trang$stt$do"."]$vang".">$do [$vang$type$do"."]$xanhd"."⌥$do"."[$lucnhat"."ID:$id$do"."]$trang"."∾$do"."[$xanh"."Success$do"."]$nau ➢$do [$hong"."Coins:$coin$do"."]\n\n";
+}
+
+function delay($delay){
+$nau=  "\033[1;92m";
+$lucnhat =  "\033[1;92m";
+$do =  "\033[1;92m";
+$xanh = "\033[1;92m";
+$vang =  "\033[1;92m";
+$xanhd =  "\033[1;92m";
+$hong =  "\033[1;92m";
+$trang =  "\033[1;92m";
+for($time = $delay;$time > -1;$time--){
+echo "\r$xanh==\>$nau"."[$trang"."Anh Hào Tool$nau"."]$do=>$xanh"."Vui$xanhd Lòng$do Chờ |●○○○○|$vang [$lucnhat$time$vang"."]   ";
+usleep(270000);
+echo "\r$xanh==\>$nau"."[$lucnhat"."Anh Hào Tool$nau"."]$do=>$hong"."Vui$trang Lòng$xanhd Chờ |○●○○○|$vang [$lucnhat$time$vang"."]   ";
+usleep(370000);
+echo "\r$xanh==\>$nau"."[$xanhd"."Anh Hào Tool$nau"."]$do=>$nau"."Vui$xanh Lòng$hong Chờ |○○●○○|$vang [$lucnhat$time$vang"."]   ";
+usleep(270000);
+echo "\r$xanh==\>$nau"."[$hong"."Anh Hào Tool$nau"."]$do=>$do"."Vui$lucnhat Lòng$vang Chờ |○○○●○|$vang [$lucnhat$time$vang"."]   ";
+usleep(270000);
+echo "\r$xanh==\>$nau"."[$xanh"."Anh Hào Tool$nau"."]$do=>$hong"."Vui$nau Lòng$nau Chờ |○○○○●|$vang [$lucnhat$time$vang"."]   ";
+usleep(270000);
+echo "\r                                            \r";
+}}
+
+function api($url,$header){
+$ch = curl_init();
+curl_setopt_array($ch, array(
+CURLOPT_URL => "$url",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_SSL_VERIFYPEER => false,
+CURLOPT_TIMEOUT => 60,
+CURLOPT_CUSTOMREQUEST => "GET",
+CURLOPT_HTTPHEADER => $header
+));
+$ch2 = curl_exec($ch);
+curl_close($ch);
+return $ch2;
+}
+
+function sapi($url,$data,$header){
+$ch = curl_init();
+curl_setopt_array($ch, array(
+CURLOPT_URL => "$url",
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_SSL_VERIFYPEER => false,
+CURLOPT_TIMEOUT => 60,
+CURLOPT_POSTFIELDS => $data,
+CURLOPT_COOKIEJAR => "cookie_teamlike.txt",
+CURLOPT_HTTPHEADER => $header
+));
+$ch2 = curl_exec($ch);
+curl_close($ch);
+return $ch2;
+}
