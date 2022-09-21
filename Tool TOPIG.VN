@@ -1,0 +1,551 @@
+error_reporting(0);
+session_start();
+$ress = "\033[0;32m";
+$res = "\033[0;33m";
+$red = "\033[0;31m";
+$green = "\033[0;37m";
+$yellow = "\033[0;33m";
+$white = "\033[0;33m";
+$banner = "\r";
+$xnhac = "\033[1;96m";
+$den = "\033[1;90m";
+$do = "\033[1;91m";
+$luc = "\033[1;92m";
+$vang = "\033[1;93m";
+$xduong = "\033[1;94m";
+$hong = "\033[1;95m";
+$trang = "\033[1;97m";
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+$useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36";
+$thuong = $do."[".$luc."●".$do."]".$trang." => ";
+$thanhngang = $vang."-------------------------------------------------------------\n";
+$weekday = date("l"); 
+$ngay = date("d"); 
+$thang = date("m"); 
+$nam = date("Y"); 
+$weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
+$banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
+  $thuong.$vang."Tool TOPIG.VN Cookie Đa Luồng\n".
+    $luc."
+                     ccccc
+                ccccccccccccccc
+             ccccccccccccccccccccc
+            ccccccccccccccccccccccc
+           ccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccc•   •ccc•   •ccccccc
+          •cccc•      ccc       cccc•
+           cccc       ccc       cccc
+           cccc      ccccc     cccc
+            •cccccccccccccccccccc•
+             •cccccccc• •ccccccc•
+               ccccccccccccccccc
+                cc•c•c•c•c•c•cc
+     ccc        cccc c c c cccc       ccc
+    ccccc        ccccccccccccc       ccccc
+   ••ccccccc      •ccccccccc•     cccccccc•
+   cccccccccccccc    •••••    cccccccccccccc
+   cccc•••ccccccccccccc   ccccccccccc•••ccc•
+             ••ccccccccccccc ••c•••
+              cccc ••ccccccccccccc
+     cccccccccccccccccc ••ccccccccccccccccc
+     cccccccccc••••           ••ccccccccccc•
+      •ccccc•                      ••cccc••
+        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+ $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
+ $luc."╚═══════════════════════════════════════════════════════════╝\n";
+ //Key tool
+if (!$sock = @fsockopen('www.google.com', 80)) {echo 'Vui lòng bật kết nối mạng';
+exit;
+  }
+
+//login tool
+@system('clear');
+$string = strlen($banner);
+for($i=0; $i<=$string; $i++){
+echo $banner[$i];usleep(500);
+}
+$dem = 0;
+if(file_exists('TokenTOPIG.txt') != true){
+  echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập Token TOPIG: $vang";
+  $tokenacc = trim(fgets(STDIN));
+  $k = fopen('TokenTOPIG.txt','a+');
+  fwrite($k,$tokenacc);
+}
+else{
+  $tokenacc = file_get_contents('TokenTOPIG.txt');
+}
+echo $luc."Đã Lưu Token TOPIG Vào File ".$trang."TokenTOPIG.txt\n";
+echo $thanhngang;
+//Token 
+$khoToken = [];
+if (file_exists('cookieIG.txt')){
+  echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập ".$hong."(".$trang."Enter".$hong.") ".$luc."Vào Chạy Tool Luôn Vì Đã Lưu Token TOPIG\n";
+	echo $do."(".$luc."●".$do.") ".$trang."=> ".$luc."Nhập ".$hong."(".$trang."ok".$hong.") ".$luc." Để Thay Cookie Instagram\n";
+	echo "\e[1;95m┌─[\e[1;37m\e[1;42m Nhập \e[0m\e[1;95m]
+└──╼ \e[1;39m: $vang"; 
+	$choice=trim(fgets(STDIN));
+	if ($choice=='ok'){
+		@system('rm cookieIG.txt');
+		}
+	}
+if (!file_exists('cookieIG.txt')){
+for($a = 1; $a < 999999;$a++){
+echo "\e[1;95m┌─[\e[1;37m\e[1;42m Nhập Cookie Instagram Thứ $a \e[0m\e[1;95m]
+└──╼ \e[1;39m: $vang"; 
+$nhapck = (string)trim(fgets(STDIN));
+if($nhapck == ''){break;}
+array_push($khoToken,$nhapck);
+}
+$js=json_encode($khoToken);
+$demcki=count($khoToken);
+$k = fopen("cookieIG.txt","a+");
+fwrite($k, $js);
+fclose($k);
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Tìm Thấy ".$vang.$demcki." ".$luc." Cookie Instagram\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Đã Lưu Cookie Vào File ".$trang."cookieIG.txt\n";
+sleep(2);
+	}else{
+		$khoToken = json_decode(fread(fopen("cookieIG.txt","r"),filesize("cookieIG.txt")),true);
+		$demcki = count($khoToken);
+	}
+
+//Check token TOPIG
+$info = check_token_tds($tokenacc);
+if ($info["error"]) {
+    @system('rm TokenTOPIG.txt');
+    exit ($info["error"]);
+}
+
+//$thongtin
+$user = strtolower($info["data"]["user"]);
+$xuhientai = $info["data"]["xu"];
+$xupen = $info["data"]["xupen"];
+$xudie = $info["data"]["xudie"];
+$datablock = [];
+$data_ig = [];
+$listjob = [];
+$dem = 0;
+system('clear');
+echo $banner; 
+
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$do."Tài Khoản TOPIG: ".$vang.$user."\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Số Nick Đang Chạy: ".$vang.$demcki."\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$hong."Số Xu Hiện Tại: ".$vang.$xuhientai."\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$xnhac."Số Xu Đợi Duyệt: ".$vang.$xupen."\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$trang."Số Xu Bị Trừ Do Vi Phạm: ".$vang.$xudie."\n";
+echo $thanhngang;
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập ".$do."[".$vang."1".$do."]".$luc." Để Chạy Nhiệm Vụ Like\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập ".$do."[".$vang."2".$do."]".$luc." Để Chạy Nhiệm Vụ Follow\n";
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập ".$do."[".$vang."1+2".$do."]".$luc." Để Chạy Nhiệm Vụ Like & Follow\n";
+
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập Số Để Chạy Nhiệm Vụ: $vang";
+$nhiemvu = trim(fgets(STDIN));
+if (strpos('_'.$nhiemvu, "1")){
+  array_push($listjob,'like');
+}
+if (strpos('_'.$nhiemvu, "2")){
+  array_push($listjob,'follow');
+}
+
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Nhập Thời Gian Làm Nhiệm Vụ ".$trang."Ít Nhất 20 Giây".$luc.": $vang";
+$delay = trim(fgets(STDIN));
+if ($delay < 20){exit($do."Ít 20 Giây\n");}
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Chuyển Nick Sau Khi Làm Số Nhiệm Vụ Là: $vang";
+$nvvong = trim(fgets(STDIN));
+echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Sau ".$vang.$nvvong.$luc." Nhiệm Vụ Nghỉ Ngơi Bao Nhiêu Giây: $vang";
+$delayvong = trim(fgets(STDIN));
+echo $thanhngang;
+if(count($khoToken) == 0){
+    for($a = 1; $a < 999999;$a++){
+      echo "\e[1;95m┌─[\e[1;37m\e[1;42m Nhập Cookie Instagram Thứ $a \e[0m\e[1;95m]
+└──╼ \e[1;39m: $vang"; 
+      $nhapck = (string)trim(fgets(STDIN));
+      if($nhapck == ''){break;}
+      array_push($khoToken,$nhapck);
+    }
+    $js=json_encode($khoToken);
+    $demcki=count($khoToken);
+    $k = fopen("Token.txt","a+");
+    fwrite($k, $js);
+    fclose($k);
+    echo $do."[".$luc."●".$do."] ".$trang."=> ".$luc."Tìm Thấy ".$vang.$demcki." ".$luc."Cookie IG\n";
+}
+
+//echo $vang."Bắt Đầu Tiến Hành Lấy Dữ Liệu IG\n";
+foreach ($khoToken as $value) {
+  $check = get_info_ig($value);
+  if ($check == 'unknown'){
+    echo $do."Lỗi kết nối!\n";
+  }else if (strpos($check, '|')){
+    $idig = explode('|', $check)[0];
+    $datablock[$idig] = $listjob;
+    array_push($data_ig, $check);
+  }
+}
+//echo $vang."Hoàn Thành Lấy Dữ Liệu IG\n";
+while (True) {
+  if (count($data_ig) == 0){
+    break;
+  }
+  foreach ($data_ig as $haha) {
+      $giainen = explode('|', $haha);
+      $idig = $giainen[0];
+      $username = $giainen[1];
+      $cookie = $giainen[2];
+      $csrftoken = $giainen[3];
+      if (count($datablock[$idig]) == 0){
+          if (($key = array_search($haha, $data_ig)) !== false) {
+              unset($data_ig[$key]);
+          }
+      }
+      if (count($data_ig) == 0){
+        break;
+      }
+      $demjoblam = 0;
+      $cauhinh = cau_hinh($idig,$tokenacc);
+      if ($cauhinh == 'unknown'){
+         echo $do."Lỗi kết nối hoặc lỗi sever, sẽ cấu hình lại sau 5 giây nữa!\n";
+         delay(5);
+         continue;
+      }else if($cauhinh == 'ok'){
+        echo $thanhngang;
+         echo $hong."Cấu hình thành công ID: ".$luc.$username."\n";
+         echo $thanhngang;
+      }else{
+        echo $do.$cauhinh."\n";
+        if (($key = array_search($haha, $data_ig)) !== false) {
+          unset($data_ig[$key]);
+        }
+        continue;
+      }
+
+      $rand = $datablock[$idig][array_rand($datablock[$idig],1)];
+      if ($rand == 'like'){
+          for ($i = 0; $i < 5; $i++) {
+            $listlike = get_job('like', $tokenacc);
+            if ($listlike == 'countdown'){
+               continue;
+            }else if($listlike == 'error'){
+               echo $do."ID: ".$username." chưa cấu hình, chuyển nick\n";
+               if (($key = array_search($haha, $data_ig)) !== false) {
+                 unset($data_ig[$key]);
+               }
+               break;
+            }else if ($listlike == 'limit'){
+              echo $do."ID: ".$username." đã đạt giới hạn nhiệm vụ like trong ngày\n";
+              if (($key = array_search('like', $datablock[$idig])) !== false) {
+                 unset($datablock[$idig][$key]);
+              }
+              break;
+            }else{
+              break;
+            }
+          }
+          $demjobvong = 0;
+          foreach ($listlike as $xxx) {
+             if ($demjobvong == $nvvong){
+                break;
+             }
+             $uid = $xxx['id'];
+             $a = lam_like($idig, $username, $uid, $cookie, $csrftoken);
+             if ($a == 368){
+                echo $do."ID: ".$username." -> Block like\n";
+                if (($key = array_search('like', $datablock[$idig])) !== false) {
+                  unset($datablock[$idig][$key]);
+                }
+                break;
+             }else if($a == 190){
+                echo $do."ID: ".$username." -> Die Cookie\n";
+                if (($key = array_search($haha, $data_ig)) !== false) {
+                  unset($data_ig[$key]);
+                }
+                break;
+             }
+             $demjobvong++;
+             delay(rand($delay,$delay+3));
+          }
+      }
+
+      else if($rand == 'follow'){
+          for ($i = 0; $i < 5; $i++) {
+            $listlike = get_job('follow', $tokenacc);
+            if ($listlike == 'countdown'){
+               continue;
+            }else if($listlike == 'error'){
+               echo $do."ID: ".$username." chưa cấu hình, chuyển nick\n";
+               if (($key = array_search($haha, $data_ig)) !== false) {
+                 unset($data_ig[$key]);
+               }
+               break;
+            }else if ($listlike == 'limit'){
+              echo $do."ID: ".$username." đã đạt giới hạn nhiệm vụ follow trong ngày\n";
+              if (($key = array_search('follow', $datablock[$idig])) !== false) {
+                 unset($datablock[$idig][$key]);
+              }
+              break;
+            }else{
+              break;
+            }
+          }
+          $demjobvong = 0;
+          foreach ($listlike as $xxx) {
+             if ($demjobvong == $nvvong){
+                break;
+             }
+             $uid = $xxx['id'];
+             $a = lam_follow($idig, $username, $uid, $cookie, $csrftoken);
+             if ($a == 368){
+                echo $do."ID: ".$username." -> Block follow\n";
+                if (($key = array_search('follow', $datablock[$idig])) !== false) {
+                  unset($datablock[$idig][$key]);
+                }
+                break;
+             }else if($a == 190){
+                echo $do."ID: ".$username." -> Die Cookie\n";
+                if (($key = array_search($haha, $data_ig)) !== false) {
+                  unset($data_ig[$key]);
+                }
+                break;
+             }
+             $demjobvong++;
+             delay(rand($delay,$delay+5));
+          }
+      }
+      delay(rand($delayvong,$delayvong+3));   
+  }
+}
+echo $vang."Hoàn Thành!";
+#Lam_Follow
+function lam_follow($idig, $username, $uid, $cookie, $csrftoken){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://www.instagram.com/web/friendships/'.$uid.'/follow/');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
+  $headers = array();
+  $headers[] = 'Authority: www.instagram.com';
+  $headers[] = 'Content-Length: 0';
+  $headers[] = 'Sec-Ch-Ua: \"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"';
+  $headers[] = 'X-Ig-App-Id: 1217981644879628';
+  $headers[] = 'Sec-Ch-Ua-Mobile: ?1';
+  $headers[] = 'X-Instagram-Ajax: d26a8ffbcd2b';
+  $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+  $headers[] = 'Accept: */*';
+  $headers[] = 'X-Requested-With: XMLHttpRequest';
+  $headers[] = 'X-Asbd-Id: 198387';
+  $headers[] = 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36';
+  $headers[] = 'X-Csrftoken: '.$csrftoken;
+  $headers[] = 'Sec-Ch-Ua-Platform: \"Android\"';
+  $headers[] = 'Origin: https://www.instagram.com';
+  $headers[] = 'Sec-Fetch-Site: same-origin';
+  $headers[] = 'Sec-Fetch-Mode: cors';
+  $headers[] = 'Sec-Fetch-Dest: empty';
+  $headers[] = 'Referer: https://www.instagram.com/';
+  $headers[] = 'Accept-Language: en-US,en;q=0.9,vi;q=0.8';
+  $headers[] = 'Cookie: '.$cookie;
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+      echo 'Error:' . curl_error($ch);
+  }
+  curl_close($ch);
+  if ($result == '{"result":"following","status":"ok"}' || $result =='{"result":"requested","status":"ok"}' || $result =='{"status":"ok"}'){
+    nhantien ('FOLLOW',$idig,$username,$uid,$GLOBALS['tokenacc']);
+  }else if($result == 'Please wait a few minutes before you try again.'){
+    return 368;
+  }else{
+    return 190;
+  }
+}
+#Lam_Like
+function lam_like($idig, $username, $uid, $cookie, $csrftoken){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://www.instagram.com/web/likes/'.$uid.'/like/');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
+  $headers = array();
+  $headers[] = 'Authority: www.instagram.com';
+  $headers[] = 'Content-Length: 0';
+  $headers[] = 'Sec-Ch-Ua: \"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"';
+  $headers[] = 'X-Ig-App-Id: 1217981644879628';
+  $headers[] = 'Sec-Ch-Ua-Mobile: ?1';
+  $headers[] = 'X-Instagram-Ajax: d26a8ffbcd2b';
+  $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+  $headers[] = 'Accept: */*';
+  $headers[] = 'X-Requested-With: XMLHttpRequest';
+  $headers[] = 'X-Asbd-Id: 198387';
+  $headers[] = 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36';
+  $headers[] = 'X-Csrftoken: '.$csrftoken;
+  $headers[] = 'Sec-Ch-Ua-Platform: \"Android\"';
+  $headers[] = 'Origin: https://www.instagram.com';
+  $headers[] = 'Sec-Fetch-Site: same-origin';
+  $headers[] = 'Sec-Fetch-Mode: cors';
+  $headers[] = 'Sec-Fetch-Dest: empty';
+  $headers[] = 'Referer: https://www.instagram.com/';
+  $headers[] = 'Accept-Language: en-US,en;q=0.9,vi;q=0.8';
+  $headers[] = 'Cookie: '.$cookie;
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+      echo 'Error:' . curl_error($ch);
+  }
+  curl_close($ch);
+  if ($result == '{"status":"ok"}'){
+    nhantien ('LIKE',$idig,$username,$uid,$GLOBALS['tokenacc']);
+  }else if($result == 'Sorry, this photo has been deleted'){
+    nhantien ('LIKE',$idig,$username,$uid,$GLOBALS['tokenacc']);
+  }else if($result == 'Please wait a few minutes before you try again.'){
+    return 368;
+  }else{
+    return 190;
+  }
+}
+#nhan_tien
+function nhantien ($t,$idig,$username,$uid,$token){
+  $data = curl_topig('https://topig.vn/api/coin/?fields='.$t.'&id='.$uid.'&access_token='.$token);
+  if (array_key_exists("success", $data)){
+     $GLOBALS['dem']++;
+     $xu = $data['data']['xupen'];
+     $xujob = $data['data']['msg'];
+     hoanthanh($GLOBALS['dem'], $t, $uid, $xujob, $xu);
+  }
+}
+#hoan_thanh
+function hoanthanh($dem, $type, $id, $xujob, $xu) {
+    $a = "\033[1;93m[\033[1;93m".$dem."\033[1;93m]\033[1;91m ● \033[1;96m".date("H:i")."\033[1;91m ●\033[1;93m $type\033[1;91m ● \033[1;97mHoàn Thành\033[1;91m ●\033[1;92m ".$xujob." \033[1;91m● \033[1;93m".$xu." Xu\n";
+    $len = strlen($a);
+    for ($x = 0; $x < $len; $x++) {
+        echo $a[$x];
+        usleep(1000);
+    }
+}
+#Get_Info_IG_Cookie
+function get_info_ig($cookie){
+  #Xu_ly_cookie
+  if (!strpos($cookie, 'ds_user_id') || !strpos($cookie, 'csrftoken')){
+      return "cookie_err";
+  }
+  $idig = trim(explode(';',explode('ds_user_id=', $cookie)[1])[0]);
+  $csrftoken = trim(explode(';',explode('csrftoken=', $cookie)[1])[0]);
+  #End_xu_ly
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, 'https://i.instagram.com/api/v1/users/'.$idig.'/info/');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+  curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
+  $headers = array();
+  $headers[] = 'Authority: i.instagram.com';
+  $headers[] = 'Sec-Ch-Ua: \"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"';
+  $headers[] = 'Sec-Ch-Ua-Mobile: ?0';
+  $headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36';
+  $headers[] = 'Accept: */*';
+  $headers[] = 'X-Asbd-Id: 198387';
+  $headers[] = 'Sec-Ch-Ua-Platform: \"Windows\"';
+  $headers[] = 'X-Ig-App-Id: 936619743392459';
+  $headers[] = 'Origin: https://www.instagram.com';
+  $headers[] = 'Sec-Fetch-Site: same-site';
+  $headers[] = 'Sec-Fetch-Mode: cors';
+  $headers[] = 'Sec-Fetch-Dest: empty';
+  $headers[] = 'Referer: https://www.instagram.com/';
+  $headers[] = 'Accept-Language: en-US,en;q=0.9';
+  $headers[] = 'Cookie: '.$cookie;
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+     echo 'unknown';
+  }
+  curl_close($ch);
+
+  if (!strpos($result, '"status":"ok"')){
+    return "cookie_err";
+  }
+  $data = json_decode($result, true)['user'];
+  $idig = $data['pk'];
+  $username = $data['username'];
+  echo $thuong.$GLOBALS['xnhac']."Lấy thành công dữ liệu IG: ".$GLOBALS['luc'].$data['full_name']." "."\n";
+  return $idig.'|'.$username.'|'.$cookie.'|'.$csrftoken;
+}
+#Get_Job
+function get_job($t, $token_topig){
+  $data = curl_topig('https://topig.vn/api/?fields='.$t.'&access_token='.$token_topig);
+  if (array_key_exists("countdown", $data)){
+    delay($data['countdown']);
+    return 'countdown';
+  }else if(array_key_exists("nvdalam", $data)){
+    return 'limit';
+  }else if (array_key_exists("error", $data)) {
+    return 'error';
+  }else{
+    return $data;
+  }
+}
+#Cau_Hinh_Nick
+function cau_hinh($idig,$token_topig){
+  $data = curl_topig('https://topig.vn/api/?fields=run&id='.$idig.'&access_token='.$token_topig);
+  if (array_key_exists("error", $data)){
+    return $data['error'];
+  }else if (array_key_exists("success", $data)){
+    return "ok";
+  }else{
+    return "unknown";
+  }
+}
+
+#Check_Token_TopIG
+function check_token_tds($token_topig){
+  $data = curl_topig('https://topig.vn/api/?fields=profile&access_token='.$token_topig);
+  return $data;
+}
+
+#Curl_TopIG
+function curl_topig($url){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+  curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
+  $headers = array();
+  $headers[] = 'Authority: topig.vn';
+  $headers[] = 'Cache-Control: max-age=0';
+  $headers[] = 'Sec-Ch-Ua: \"Google Chrome\";v=\"93\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"93\"';
+  $headers[] = 'Sec-Ch-Ua-Mobile: ?0';
+  $headers[] = 'Sec-Ch-Ua-Platform: \"Windows\"';
+  $headers[] = 'Upgrade-Insecure-Requests: 1';
+  $headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36';
+  $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9';
+  $headers[] = 'Sec-Fetch-Site: none';
+  $headers[] = 'Sec-Fetch-Mode: navigate';
+  $headers[] = 'Sec-Fetch-User: ?1';
+  $headers[] = 'Sec-Fetch-Dest: document';
+  $headers[] = 'Accept-Language: en-US,en;q=0.9,vi;q=0.8';
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+      return 'error_net';
+  }
+  curl_close($ch);
+  return json_decode($result, true);
+}
+
+#delay
+function delay($delay) {
+    for ($time = $delay; $time > -1; $time--) {
+        echo "\r\033[1;92mLàm Nhiệm Vụ Tiếp Theo Sau:\033[1;93m $time\033[1;93m Giây ";
+usleep(133333);
+echo $do."Loading";
+usleep(133333);
+echo $do." ●";
+usleep(133333);
+echo $do." ●";
+usleep(133333);
+echo $do." ●";
+usleep(133333);
+echo $do." ● ";
+usleep(133333);
+echo "$res  \r";
+    }
+}
