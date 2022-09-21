@@ -50,7 +50,7 @@ $weekday = strtolower($weekday);switch($weekday) { case 'monday':
               $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool Nuôi Facebook Đa Cookie\n".
-  $luc."
+    $luc."
                      ccccc
                 ccccccccccccccc
              ccccccccccccccccccccc
