@@ -1,0 +1,401 @@
+error_reporting(0);
+session_start();
+$useragent = "Mozilla/5.0 (Linux; Android 10; SM-J600G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36";
+$ip = file_get_contents('http://kiemtraip.com/raw.php');
+$res="\033[0m";
+$BBlack="\033[1;30m" ; 
+$BRed="\033[1;31m" ;
+$BGreen="\033[1;32m" ;
+$BYellow="\033[1;33m" ;
+$BBlue="\033[1;34m" ;
+$BPurple="\033[1;35m" ;
+$BCyan="\033[1;36m" ;
+$BWhite="\033[1;37m" ;
+$Blue="\033[0;34m";
+$lime="\033[1;32m";
+$red="\033[1;31m";
+$xanh="\033[1;32m";
+$cyan="\033[1;36m";
+$yellow="\033[1;33m";
+$turquoise="\033[1;34m";
+$maugi="\033[1;35m";
+$white= "\033[1;37m";
+$red="\033[1;31m";
+$white= "\033[1;37m";
+$whiteb= "\033[1;37m";
+$redb="\033[1;31m";
+$green="\033[1;32m";
+$yellow="\033[1;33m";
+$cam="\033[1;33m";
+$test="\033[1;33m";
+$greenb="\033[1;32m";
+$blue="\033[1;34m";
+$lam="\033[1;34m";
+$tmi="\033[1;34m";
+$hong="\033[1;35m";
+$imt="\033[1;35m";
+$cyan= "\e[1;36m";
+$syan="\033[1;36m";
+$xnhac= "\033[1;96m";
+$den="\033[1;90m";
+$do="\033[1;91m";
+$luc="\033[1;92m";
+$vang="\033[1;93m";
+$xduong="\033[1;94m";
+$hong="\033[1;95m";
+$trang="\033[1;97m";
+$vang="\033[1;93m";
+$do="\033[1;91m";
+$BBlack="\033[1;30m" ;      
+$BRed="\033[1;31m"         ;
+$BGreen="\033[1;32m"       ;
+$BYellow="\033[1;33m"   ;
+$BBlue="\033[1;34m"        ;
+$BPurple="\033[1;35m"      ;
+$BCyan="\033[1;36m"   ;
+$BWhite="\033[1;37m"    ;
+$Blue="\033[0;34m";
+$lime="\033[1;32m";
+$red="\033[1;31m";
+$xanh="\033[1;32m";
+$cyan="\033[1;36m";
+$yellow="\033[1;33m";
+$turquoise="\033[1;34m";
+$maugi="\033[1;35m";
+$white= "\033[1;37m";
+$BCyan="\033[1;36m";
+$trang="\033[1;37m";
+$do="\033[1;31m";
+$luc="\033[1;32m";
+$vang="\033[1;33m";
+$luc="\033[1;92m";
+$thuong = $do."[".$luc."●".$do."]".$trang." => ";
+$thanhngang = $vang."-------------------------------------------------------------\n";
+$weekday = date("l"); 
+$ngay = date("d"); 
+$thang = date("m"); 
+$nam = date("Y"); 
+$weekday = strtolower($weekday);switch($weekday) { case 'monday':
+  $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday':
+    $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday':
+      $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday':
+        $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday':
+          $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday':
+            $weekday = "\033[1;33mThứ \033[1;36m7"; break; default:
+              $weekday = "\033[1;33mCN"; break; }
+$banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
+  $thuong.$vang."Tool Nuôi Facebook Đơn Cookie\n".
+    $luc."
+                     ccccc
+                ccccccccccccccc
+             ccccccccccccccccccccc
+            ccccccccccccccccccccccc
+           ccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccccccccccccccccccccccc
+          ccccccc•   •ccc•   •ccccccc
+          •cccc•      ccc       cccc•
+           cccc       ccc       cccc
+           cccc      ccccc     cccc
+            •cccccccccccccccccccc•
+             •cccccccc• •ccccccc•
+               ccccccccccccccccc
+                cc•c•c•c•c•c•cc
+     ccc        cccc c c c cccc       ccc
+    ccccc        ccccccccccccc       ccccc
+   ••ccccccc      •ccccccccc•     cccccccc•
+   cccccccccccccc    •••••    cccccccccccccc
+   cccc•••ccccccccccccc   ccccccccccc•••ccc•
+             ••ccccccccccccc ••c•••
+              cccc ••ccccccccccccc
+     cccccccccccccccccc ••ccccccccccccccccc
+     cccccccccc••••           ••ccccccccccc•
+      •ccccc•                      ••cccc••
+        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+ $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
+ $thuong.$hong."IP Tool Của Bạn: \033[1;97m$ip\n".
+ $luc."╚═══════════════════════════════════════════════════════════╝\n";
+ //Key tool
+if (!$sock = @fsockopen('www.google.com', 80)) {echo 'Vui lòng bật kết nối mạng';
+exit;
+  }
+
+///bắt đầu vào tool //////
+@system('clear');
+$string = strlen($banner);
+for($i=0; $i<=$string; $i++){
+echo $banner[$i];usleep(500);}
+while(true){
+echo $green." Nhập Cookie Facebook Cần Nuôi:$white ";
+$cookie=trim(fgets(STDIN));
+$access = cookie($cookie,$useragent);;
+    $access_token = 'EAAG'.explode('","', explode('EAAG', $access)[1])[0];
+    if ($access_token == 'die') {
+      echo $thuong.$do."[".$luc."●".$do."]".$red." ●".$do."Cookie Facebook Die\n";
+}
+while(true){ 
+ @system('clear');
+$string = strlen($banner);
+for($i=0; $i<=$string; $i++){
+echo $banner[$i];usleep(500);}
+ unset($so); unset($_SESSION['giaay']);unset($nhap);
+ unset($nguoi); unset($so1); unset($dem);
+$typ =[];
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m1\033[1;31m]$BGreen Thương Thương \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m2\033[1;31m]$BGreen Like \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m3\033[1;31m]$BGreen HaHa \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m4\033[1;31m]$BGreen Phẫn Nộ \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m5\033[1;31m]$BGreen Wow \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m6\033[1;31m]$BGreen Buồn \n";
+    echo $BGreen."\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Nhập \033[1;31m[\033[1;32m7\033[1;31m]$BGreen Tim \n";
+    echo $BGreen."\033[1;31m[\033[1;32m✔\033[1;31m]$white =>$BGreen Nhập Chế Độ: \033[1;36m";
+$nhap = trim(fgets(STDIN))."8";
+if (strlen(strstr($nhap ,'1')) > 0){array_push($typ,'THUONG');}
+if (strlen(strstr($nhap ,'2')) > 0){array_push($typ, 'LIKE');}
+if (strlen(strstr($nhap ,'3')) > 0){array_push($typ,'HAHA');}
+if (strlen(strstr($nhap ,'4')) > 0){array_push($typ, 'PHANNO');}
+if (strlen(strstr($nhap ,'5')) > 0){array_push($typ, 'WOW');}
+if (strlen(strstr($nhap ,'6')) > 0){array_push($typ, 'BUON');}
+if (strlen(strstr($nhap ,'7')) > 0){array_push($typ, 'LOVE');}
+ if (count($typ) == 0){exit($BRed."Chọn Ít Nhất 1 Nhiệm Vụ!");}
+ 
+echo $thanhngang;
+echo $do."[".$luc."✔".$do."]".$white." =>".$luc." Bật CMT Sau Khi Tương Tác Nhập".$vang." y".$BGreen." Không Bật Ấn".$do." Enter:".$BWhite." ";
+$cmt=trim(fgets(STDIN));
+if($cmt == 'y' or$cmt == 'Y'){
+echo $do."[".$luc."✔".$do."]".$white." =>".$luc." Nhập Nội Dung CTM:".$vang." ";
+$noidung=trim(fgets(STDIN));
+echo "\033[1;31m[\033[1;32m●\033[1;31m]$white =>$BGreen Sau Bao Nhiêu Tương Tác Thì CMT 1 Lần: $BWhite";
+$dem=trim(fgets(STDIN));
+}
+echo $do."[".$luc."✔".$do."]".$white." =>".$luc." Delay Nhiệm Vụ:".$BWhite." ";
+$_SESSION['giaay']=trim(fgets(STDIN));
+echo $thanhngang;
+$list = gethome($cookie,$useragent);
+$so = 1;$ran = rand(10,20);
+while(true){$i=1; $i++;
+  $link2 = explode('">Bày tỏ cảm xúc',explode('/reactions/picker/?',$list)[1])[0];
+  $url = 'https://mbasic.facebook.com/reactions/picker/?'.str_replace('&amp;','&',$link2);
+  sleep(4); 
+
+  $type = $typ[array_rand($typ,1)];
+  $mess = camxuctuongtac($cookie,$url,$useragent,$type);
+  $id = explode('&origin_uri',explode('?ft_id=',$url)[1])[0];
+  if(empty($id)){
+    $access = cookie($cookie,$useragent);;
+    $access_token = 'EAAG'.explode('","', explode('EAAG', $access)[1])[0];
+    if ($access_token == 'die') {
+      echo $thuong.$do."[".$luc."●".$do."]".$red." ●".$do."Cookie Facebook Die\n";
+}
+}
+  echo $BCyan."[".$BCyan.$so++.$BCyan."]".$BGreen." Đã thả: ".$BYellow.$type.$BGreen." Vào bài viết: ".$BCyan.$id." \n";$o++;$c++;$ct++;
+  if (($cmt == 'Y' or $cmt == 'y')and $ct == $dem){
+  $msge = explode('|',$noidung);
+  $msg = $msge[array_rand($msge,1)];
+  $g = cmttoken($access_token,$id,$msg,$useragent);
+  echo $BCyan."[".$BCyan.$so++.$BCyan."]".$BGreen." Đã".$do." CMT".$luc." Vào Bài Viết Có ID: ".$BYellow.$id.$BGreen."\n".$do."[".$luc."✔".$do."]".$white." =>".$luc."Với Nội Dung: \033[1;34m".$msg." \n";$ct =0;
+  }
+  for($v = 0;$v<$_SESSION['giaay'];$v++){echo $yellow."Vui Lòng Đợi   ".($_SESSION['giaay']-$v)." giây ~>";sleep(1);echo "     \r";} 
+if($o == 1){
+  $linktap = explode('" class="',explode('/stories.php?',$list)[1])[0];
+  $chuyentap = 'https://mbasic.facebook.com/stories.php?'.str_replace('&amp;','&',$linktap);
+    $list = gettiephome($cookie,$chuyentap,$useragent);
+    $i = 0; $o = 0;
+  }
+}
+}
+}
+function getbaiviet($cookie,$access_token,$useragent,$idfb){
+	$ch=curl_init();
+	curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/'.$idfb.'/posts?limit=1000&fields=id,name&access_token='.$access_token);
+	$head[] = "Connection: keep-alive";
+	$head[] = "Keep-Alive: 300";
+	$head[] = "authority: m.facebook.com";
+	$head[] = "ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+	$head[] = "accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5";
+	$head[] = "cache-control: max-age=0";
+	$head[] = "upgrade-insecure-requests: 1";
+	$head[] = "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
+	$head[] = "sec-fetch-site: none";
+	$head[] = "sec-fetch-mode: navigate";
+	$head[] = "sec-fetch-user: ?1";
+	$head[] = "sec-fetch-dest: document";
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+	curl_setopt($ch, CURLOPT_ENCODING, '');
+	curl_setopt($ch, CURLOPT_COOKIE, $cookie);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+	$access = curl_exec($ch);
+	curl_close($ch);
+	return json_decode($access);
+}
+
+function gettiephome($cookie,$linktiep,$useragent){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,$linktiep);
+$head[] = "Connection: keep-alive";
+	$head[] = "Keep-Alive: 300";
+	$head[] = "authority: m.facebook.com";
+	$head[] = "ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+	$head[] = "accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5";
+	$head[] = "cache-control: max-age=0";
+	$head[] = "upgrade-insecure-requests: 1";
+	$head[] = "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
+	$head[] = "sec-fetch-site: none";
+	$head[] = "sec-fetch-mode: navigate";
+	$head[] = "sec-fetch-user: ?1";
+	$head[] = "sec-fetch-dest: document";
+curl_setopt($ch, CURLOPT_TIMEOUT,60);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT,60);
+curl_setopt($ch, CURLOPT_USERAGENT,$useragent);
+curl_setopt($ch, CURLOPT_COOKIE,$cookie);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,TRUE);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,TRUE);
+curl_setopt($ch, CURLOPT_HTTPHEADER,$head);
+curl_setopt($ch, CURLOPT_ENCODING,'');
+return  curl_exec($ch);
+curl_close($ch);
+}
+function camxuctuongtac($cookie,$link,$useragent,$type){
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $link);
+	$head[] = "Connection: keep-alive";
+	$head[] = "Keep-Alive: 300";
+	$head[] = "authority: m.facebook.com";
+	$head[] = "ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+	$head[] = "accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5";
+	$head[] = "cache-control: max-age=0";
+	$head[] = "upgrade-insecure-requests: 1";
+	$head[] = "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
+	$head[] = "sec-fetch-site: none";
+	$head[] = "sec-fetch-mode: navigate";
+	$head[] = "sec-fetch-user: ?1";
+	$head[] = "sec-fetch-dest: document";
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+	curl_setopt($ch, CURLOPT_ENCODING, '');
+	curl_setopt($ch, CURLOPT_COOKIE, $cookie);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+$m = curl_exec($ch);
+if ($type == 'LIKE'){ $link2 = explode('" style="display:block"',explode('&amp;reaction_type=1',$m)[1])[0];
+  $link4 = '&amp;reaction_type=1'.$link2;
+}
+if ($type == 'THUONG'){ $link2 = explode('" style="display:block"',explode('&amp;reaction_type=16',$m)[1])[0];
+  $link4 = '&amp;reaction_type=16'.$link2;
+}
+if ($type == 'LOVE'){ $link2 = explode('" style="display:block"',explode('&amp;reaction_type=2',$m)[1])[0];
+  $link4 = '&amp;reaction_type=2'.$link2;
+}
+if ($type == 'WOW' ){$link2 = explode('" style="display:block"',explode('&amp;reaction_type=3',$m)[1])[0];
+  $link4 = '&amp;reaction_type=3'.$link2;
+}
+if ($type == 'HAHA'){$link2 = explode('" style="display:block"',explode('&amp;reaction_type=4',$m)[1])[0];
+  $link4 = '&amp;reaction_type=4'.$link2;
+}
+if ($type == 'SAD'){$link2 = explode('" style="display:block"',explode('&amp;reaction_type=7',$m)[1])[0];
+  $link4 = '&amp;reaction_type=7'.$link2;
+}
+if ($type == ''){$link2= explode('" style="display:block"',explode('&amp;reaction_type=8')[1])[0];
+  $link4 = '&amp;reaction_type=8'.$link2;
+}
+$link3 = explode('&amp;reaction_type=',explode('<a href="/ufi/reaction/?',$m)[1])[0];
+$link5 = str_replace('&amp;', '&', $link3.$link4);
+curl_setopt($ch, CURLOPT_URL, "https://mbasic.facebook.com/ufi/reaction/?".$link5);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ $n =	curl_exec($ch);
+ curl_close($ch);
+ return 
+explode('</title><meta',explode('head><title>',$n)[1])[0];}
+function gethome($cookie,$useragent){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL,'https://mbasic.facebook.com/home.php');
+$head[] = "Connection: keep-alive";
+	$head[] = "Keep-Alive: 300";
+	$head[] = "authority: m.facebook.com";
+	$head[] = "ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+	$head[] = "accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5";
+	$head[] = "cache-control: max-age=0";
+	$head[] = "upgrade-insecure-requests: 1";
+	$head[] = "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
+	$head[] = "sec-fetch-site: none";
+	$head[] = "sec-fetch-mode: navigate";
+	$head[] = "sec-fetch-user: ?1";
+	$head[] = "sec-fetch-dest: document";
+curl_setopt($ch, CURLOPT_TIMEOUT,60);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT,60);
+curl_setopt($ch, CURLOPT_USERAGENT,$useragent);
+curl_setopt($ch, CURLOPT_COOKIE,$cookie);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,TRUE);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,TRUE);
+curl_setopt($ch, CURLOPT_HTTPHEADER,$head);
+curl_setopt($ch, CURLOPT_ENCODING,'');
+return  curl_exec($ch);
+curl_close($ch);
+}
+function cookie($cookie, $useragent) {
+    $head= array("Connection: keep-alive","Keep-Alive: 300","authority: business.facebook.com","ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7","accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5","cache-control: max-age=0","upgrade-insecure-requests: 1","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","sec-fetch-site: none","sec-fetch-mode: navigate","sec-fetch-user: ?1","sec-fetch-dest: document");
+$ch=curl_init();
+	curl_setopt_array($ch , array(
+		CURLOPT_URL => "https://business.facebook.com/business_locations",
+		CURLOPT_USERAGENT => $useragent,
+		CURLOPT_COOKIE => $cookie,
+		CURLOPT_HTTPHEADER => $head,
+		CURLOPT_RETURNTRANSFER => 1,
+		CURLOPT_SSL_VERIFYPEER => FALSE,
+		CURLOPT_TIMEOUT => 60,
+		CURLOPT_CONNECTTIMEOUT => 60,
+		CURLOPT_FOLLOWLOCATION => TRUE
+	));
+	$access = curl_exec($ch);
+	curl_close($ch);
+$access_token = 'EAAG'.explode('","', explode('EAAG', $access)[1])[0];
+if(strlen($access_token) > 5){
+	return $access_token;
+} else {
+	return 'die';
+}
+}
+function cmttoken($access_token,$id,$msg,$useragent){
+	$ch=curl_init();
+	curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/'.$id.'/comments');
+	$head[] = "Connection: keep-alive";
+	$head[] = "Keep-Alive: 300";
+	$head[] = "authority: m.facebook.com";
+	$head[] = "ccept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+	$head[] = "accept-language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5";
+	$head[] = "cache-control: max-age=0";
+	$head[] = "upgrade-insecure-requests: 1";
+	$head[] = "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
+	$head[] = "sec-fetch-site: none";
+	$head[] = "sec-fetch-mode: navigate";
+	$head[] = "sec-fetch-user: ?1";
+	$head[] = "sec-fetch-dest: document";
+	curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+	curl_setopt($ch, CURLOPT_ENCODING, '');
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $head);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
+	$data = array('message' => $msg,'access_token' => $access_token);
+	curl_setopt($ch, CURLOPT_POST,count($data));
+	curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+	$access = curl_exec($ch);
+	curl_close($ch);
+	return json_decode($access);
+}
