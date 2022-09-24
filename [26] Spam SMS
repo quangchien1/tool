@@ -1,4 +1,4 @@
-
+<?php
 
 @system('clear');
 
@@ -32,8 +32,8 @@ $hong = "\033[1;32m";
 $trang = "\033[1;32m";
 $do="\033[1;32m";
 $useragent = "Mozilla/5.0 (Linux; Android 10; SM-J610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.1.4472.202 Mobile Safari/537.36";
-$van = "$do âžœ$luc";
-$vanv = "".$do."âž¤âž¤ ".$luc;
+$van = "$do ➜$luc";
+$vanv = "".$do."➤➤ ".$luc;
 
 $k = "0";
 $tt="0";
@@ -80,7 +80,7 @@ $vv = 0;
 
 while(true){
 	$vv = $vv+1;
-echo $van." Nháº­p SÄT Cáº§n Spam Thá»© $vv : ".$do;
+echo $van." Nhập SĐT Cần Spam Thứ $vv : ".$do;
 $ttsdt = trim(fgets(STDIN));
 if($ttsdt == ''){break;}
 array_push($tsdt,$ttsdt);
@@ -93,7 +93,7 @@ for ($s = 0; $s < $dem ; $s++) {
 	
 $sdt = $tsdt[$s];
 
-echo $vanv."ÄANG SPAM Sá» : ".$do.$sdt." \n";
+echo $vanv."ĐANG SPAM SỐ : ".$do.$sdt." \n";
 
 
 $tongurl = [];
@@ -136,24 +136,24 @@ for ($so = 0; $so < 7 ; $so++) {
 	
     echo "".$do." | ".$BBlue.    $tt.$do." | ".$luc.$gio.$do." | ".$trang."SPAMSMS".$do." | ".$vang.$loai.$do." | ".$luc.$sdt.$do." |\n";
     }else{
-    	echo "".$do." | ".$BBlue.    $tt.$do." | ".$luc.$gio.$do." | ".$trang."SPAMSMS".$do." | ".$vang.$loai.$do." |".$luc."Sá»‘ $sdt ÄÃ£ Háº¿t Sá»‘ Láº§n Gá»­i OTP".$do."|\n";
+    	echo "".$do." | ".$BBlue.    $tt.$do." | ".$luc.$gio.$do." | ".$trang."SPAMSMS".$do." | ".$vang.$loai.$do." |".$luc."Số $sdt Đã Hết Số Lần Gửi OTP".$do."|\n";
     }
    
 }### trong
 
-}##ngoÃ i 
+}##ngoài 
 
 for($m=30;$m>-1;$m--){
 
-echo "".$trang."[".$do."Tráº¡ng tool".$trang."]--[".$vang.$m.$trang."]              \r";
+echo "".$trang."[".$do."Trạng tool".$trang."]--[".$vang.$m.$trang."]              \r";
 usleep(170000);
-echo "".$trang."[".$do."Tráº¡ng tool".$trang."]----[".$vang.$m.$trang."]            \r";
+echo "".$trang."[".$do."Trạng tool".$trang."]----[".$vang.$m.$trang."]            \r";
 usleep(170000);
-echo "".$trang."[".$do."Tráº¡ng tool".$trang."]------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Trạng tool".$trang."]------[".$vang.$m.$trang."]          \r";
 usleep(170000);
-echo "".$trang."[".$do."Tráº¡ng tool".$trang."]-------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Trạng tool".$trang."]-------[".$vang.$m.$trang."]          \r";
 usleep(170000);
-echo "".$trang."[".$do."Tráº¡ng tool".$trang."]--------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Trạng tool".$trang."]--------[".$vang.$m.$trang."]          \r";
 usleep(170000);
 
 }
