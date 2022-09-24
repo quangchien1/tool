@@ -143,15 +143,15 @@ for ($so = 0; $so < 7 ; $so++) {
 
 for($m=30;$m>-1;$m--){
 
-echo "".$trang."[".$do."Trạng tool".$trang."]--[".$vang.$m.$trang."]              \r";
+echo "".$trang."[".$do."Vũ Quang Chiến".$trang."]--[".$vang.$m.$trang."]              \r";
 usleep(170000);
-echo "".$trang."[".$do."Trạng tool".$trang."]----[".$vang.$m.$trang."]            \r";
+echo "".$trang."[".$do."Vũ Quang Chiến".$trang."]----[".$vang.$m.$trang."]            \r";
 usleep(170000);
-echo "".$trang."[".$do."Trạng tool".$trang."]------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Vũ Quang Chiến".$trang."]------[".$vang.$m.$trang."]          \r";
 usleep(170000);
-echo "".$trang."[".$do."Trạng tool".$trang."]-------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Vũ Quang Chiến".$trang."]-------[".$vang.$m.$trang."]          \r";
 usleep(170000);
-echo "".$trang."[".$do."Trạng tool".$trang."]--------[".$vang.$m.$trang."]          \r";
+echo "".$trang."[".$do."Vũ Quang Chiến".$trang."]--------[".$vang.$m.$trang."]          \r";
 usleep(170000);
 
 }
