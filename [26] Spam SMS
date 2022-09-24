@@ -1,5 +1,3 @@
-<?php
-
 @system('clear');
 
 date_default_timezone_set("Asia/Ho_Chi_Minh");
@@ -157,7 +155,6 @@ echo "".$trang."[".$do."Trạng tool".$trang."]--------[".$vang.$m.$trang."]    
 usleep(170000);
 
 }
-
 
 
 }
