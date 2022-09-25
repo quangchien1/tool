@@ -2,6 +2,7 @@ error_reporting(0);
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $ip = file_get_contents('http://kiemtraip.com/raw.php');
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
 /***[ Color ]***/
 $ress = "\033[0;32m";
 $res = "\033[0;33m";
