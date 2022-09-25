@@ -2,7 +2,7 @@ error_reporting(0);
 session_start();
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 $useragent = 'Mozilla/5.0 (Linux; Android 8.1.0; Redmi Note 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36';
-$ip = file_get_contents('http://kiemtraip.com/raw.php');
+
 $ress = "\033[0;32m";
 $res = "\033[0;33m";
 $red = "\033[0;31m";
