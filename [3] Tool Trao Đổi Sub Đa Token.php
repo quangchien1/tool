@@ -71,8 +71,6 @@ lM  MMMMx              KMMMMMMMMMMMMM.                    cd
              kx,    'MMMMMMMMMMMMMMMMMMM    .lx
                 .0o,.                  ..ck.
                       ckoc:;,,',,;coxl
-
-
 \n\n".
  $thanh_xau.$luc."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thanh_xau.$luc."IP Tool Của Bạn: \033[1;97m$ip\n".
