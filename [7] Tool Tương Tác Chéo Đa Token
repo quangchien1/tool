@@ -48,33 +48,37 @@ $weekday = strtolower($weekday);switch($weekday) { case 'monday':
               $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool Tương Tác Chéo Token Đa Luồng\n".
-  $luc."
-                     ccccc
-                ccccccccccccccc
-             ccccccccccccccccccccc
-            ccccccccccccccccccccccc
-           ccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccc•   •ccc•   •ccccccc
-          •cccc•      ccc       cccc•
-           cccc       ccc       cccc
-           cccc      ccccc     cccc
-            •cccccccccccccccccccc•
-             •cccccccc• •ccccccc•
-               ccccccccccccccccc
-                cc•c•c•c•c•c•cc
-     ccc        cccc c c c cccc       ccc
-    ccccc        ccccccccccccc       ccccc
-   ••ccccccc      •ccccccccc•     cccccccc•
-   cccccccccccccc    •••••    cccccccccccccc
-   cccc•••ccccccccccccc   ccccccccccc•••ccc•
-             ••ccccccccccccc ••c•••
-              cccc ••ccccccccccccc
-     cccccccccccccccccc ••ccccccccccccccccc
-     cccccccccc••••           ••ccccccccccc•
-      •ccccc•                      ••cccc••
-        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+   $luc."
+                      .:d0XWMMMMWXOd:.
+                 .cxl                  'xc'
+             .cO'    .,coxO0KKKKKOkdl:'     Oc.
+           cK.   ;d0WMMMMMMMMMMMMMMMMMMMNOl'   xl
+        .x0   lKMMMMMMM,       'MMMMMMMMMMMMWk;  'k.
+       xX  .kMMMMMM            KMMMMMMMMMMMMMMMNo  ;k
+     ;W. .OMMMMMMMl           kMMMMMMMMMMMMMMMMMMWo  Oc
+    kW  lMMMMM  oMM.         :MMMMMMMMMMMMMM: 'MMMMN. ;k
+   KK  OMMMM;    XMN        .MMMMMMMMMMMMMMx    oMx    .K
+  0W  KMMMM       MM0       NMMMMMMMMMMMMMX             ,K
+ :M  OMMMM        'MMc     KMMMMMMMMMMMMMM               dc
+ Mo 'MMMM'         oMM.   xMMMMMMMMMMMMMM.                M
+,M. XMMMK           KMW  ;MMMMMMMMMMMMMM;                 k:
+OM  MMMM:            MMK.MMMMMMMMMMMMMMd                  ,0
+XW  MMMM'            'MMMMMMMMMMMMMMMMK                   .W
+0M  MMMM,             oMMMMMMMMMMMMMMM                    'X
+lM  MMMMx              KMMMMMMMMMMMMM.                    cd
+.M, lMMMM               MMMMMMMMMMMM,                     N.
+ kN  MMMM0              .MMMMMMMMMMl                     '0
+  Mx .MMMMx              lMMMMMMMMO                      W
+  .M: .MMMMO              KMMMMMMW                      K.
+   .Mc  MMMMN,             MMMMMM              lWMK,   K.
+     Nx  dMMMM0'           .MMMM'            lNMMMM. .X
+      :X,  0MMMMXl.         lMMl          ,kWMMMMc  d:
+        dO.  cMMMMMXd;.      Kk       'cOWMMMMM.  ld
+          ;0;   lMMMMMMWKOxolK0lldk0NMMMMMMM,  .dc
+             kx,    'MMMMMMMMMMMMMMMMMMM    .lx
+                .0o,.                  ..ck.
+                      ckoc:;,,',,;coxl
+\n\n".
  $thanh_xau.$luc."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thanh_xau.$luc."IP Tool Của Bạn: \033[1;97m$ip\n".
  $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
