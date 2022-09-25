@@ -10,7 +10,7 @@ $vang =  "\033[1;92m";
 $xanhd =  "\033[1;92m";
 $hong =  "\033[1;92m";
 $trang =  "\033[1;92m";
-
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
 
 //Thời gian
 $weekday = date("l"); 
@@ -20,35 +20,6 @@ $nam = date("Y");
 $weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
 
 // Logo
-$logo = "$trang                     ccccc
-                ccccccccccccccc
-             ccccccccccccccccccccc
-            ccccccccccccccccccccccc
-           ccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccc•   •ccc•   •ccccccc
-          •cccc•      ccc       cccc•
-           cccc       ccc       cccc
-           cccc      ccccc     cccc
-            •cccccccccccccccccccc•
-             •cccccccc• •ccccccc•
-               ccccccccccccccccc
-                cc•c•c•c•c•c•cc
-     ccc        cccc c c c cccc       ccc
-    ccccc        ccccccccccccc       ccccc
-   ••ccccccc      •ccccccccc•     cccccccc•
-   cccccccccccccc    •••••    cccccccccccccc
-   cccc•••ccccccccccccc   ccccccccccc•••ccc•
-             ••ccccccccccccc ••c•••
-              cccc ••ccccccccccccc
-     cccccccccccccccccc ••ccccccccccccccccc
-     cccccccccc••••           ••ccccccccccc•
-      •ccccc•                      ••cccc••
-        ccc•     VŨ QUANG CHIẾN      ccc•\n\n";
-
-
-
 /*
 echo "$xanh =\> Nhập Text Request Wep TeamLike\n        $vang |> : $lucnhat";
 $request = trim(fgets(STDIN));
