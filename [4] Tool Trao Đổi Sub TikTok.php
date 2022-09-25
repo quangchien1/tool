@@ -34,7 +34,7 @@ $yellow="\033[1;33m";
 $turquoise="\033[1;34m";
 $maugi="\033[1;35m";
 $white= "\033[1;37m";
-
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
 $useragent = "Mozilla/5.0 (Linux; Android 10; SM-J610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.1.4472.202 Mobile Safari/537.36";
 
 $plus2 = "\033[97m➻➤";
@@ -47,39 +47,7 @@ $nam = date("Y");
 $weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $plus.$vang."Tool Trao Đổi Sub TikTok \n".
-   $luc."
-                      .:d0XWMMMMWXOd:.
-                 .cxl                  'xc'
-             .cO'    .,coxO0KKKKKOkdl:'     Oc.
-           cK.   ;d0WMMMMMMMMMMMMMMMMMMMNOl'   xl
-        .x0   lKMMMMMMM,       'MMMMMMMMMMMMWk;  'k.
-       xX  .kMMMMMM            KMMMMMMMMMMMMMMMNo  ;k
-     ;W. .OMMMMMMMl           kMMMMMMMMMMMMMMMMMMWo  Oc
-    kW  lMMMMM  oMM.         :MMMMMMMMMMMMMM: 'MMMMN. ;k
-   KK  OMMMM;    XMN        .MMMMMMMMMMMMMMx    oMx    .K
-  0W  KMMMM       MM0       NMMMMMMMMMMMMMX             ,K
- :M  OMMMM        'MMc     KMMMMMMMMMMMMMM               dc
- Mo 'MMMM'         oMM.   xMMMMMMMMMMMMMM.                M
-,M. XMMMK           KMW  ;MMMMMMMMMMMMMM;                 k:
-OM  MMMM:            MMK.MMMMMMMMMMMMMMd                  ,0
-XW  MMMM'            'MMMMMMMMMMMMMMMMK                   .W
-0M  MMMM,             oMMMMMMMMMMMMMMM                    'X
-lM  MMMMx              KMMMMMMMMMMMMM.                    cd
-.M, lMMMM               MMMMMMMMMMMM,                     N.
- kN  MMMM0              .MMMMMMMMMMl                     '0
-  Mx .MMMMx              lMMMMMMMMO                      W
-  .M: .MMMMO              KMMMMMMW                      K.
-   .Mc  MMMMN,             MMMMMM              lWMK,   K.
-     Nx  dMMMM0'           .MMMM'            lNMMMM. .X
-      :X,  0MMMMXl.         lMMl          ,kWMMMMc  d:
-        dO.  cMMMMMXd;.      Kk       'cOWMMMMM.  ld
-          ;0;   lMMMMMMWKOxolK0lldk0NMMMMMMM,  .dc
-             kx,    'MMMMMMMMMMMMMMMMMMM    .lx
-                .0o,.                  ..ck.
-                      ckoc:;,,',,;coxl
-
-
-\n".
+   $luc."$logo\n".
  $thanh_xau.$luc."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thanh_xau.$luc."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
