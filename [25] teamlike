@@ -76,7 +76,7 @@ $getinfo = api($urlinfo,$header);
 $x = explode('<b id="c_coins">', $getinfo)[1];
 $coin = explode(' เหรียญ</b>', $x)[0];
 
-echo "$logo";
+echo $xanh."$logo";
 for($a = 27;$a > -1;$a --){
 echo "$xanh"."=";usleep(20000);echo "$hong"."=";usleep(20000);
 }
