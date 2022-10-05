@@ -14,6 +14,9 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 /////key tool ///////
 
 @system('clear');logo();
+
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
+
 $list_ck = [];
 $list_ua = [];
 for($i=0;$i<=9999999;$i++){
