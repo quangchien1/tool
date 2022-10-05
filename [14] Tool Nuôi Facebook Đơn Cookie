@@ -1,5 +1,8 @@
 error_reporting(0);
 session_start();
+
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
+
 $useragent = "Mozilla/5.0 (Linux; Android 10; SM-J600G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36";
 $ip = file_get_contents('http://kiemtraip.com/raw.php');
 $res="\033[0m";
@@ -85,33 +88,7 @@ $weekday = strtolower($weekday);switch($weekday) { case 'monday':
               $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool Nuôi Facebook Đơn Cookie\n".
-    $luc."
-                     ccccc
-                ccccccccccccccc
-             ccccccccccccccccccccc
-            ccccccccccccccccccccccc
-           ccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccc•   •ccc•   •ccccccc
-          •cccc•      ccc       cccc•
-           cccc       ccc       cccc
-           cccc      ccccc     cccc
-            •cccccccccccccccccccc•
-             •cccccccc• •ccccccc•
-               ccccccccccccccccc
-                cc•c•c•c•c•c•cc
-     ccc        cccc c c c cccc       ccc
-    ccccc        ccccccccccccc       ccccc
-   ••ccccccc      •ccccccccc•     cccccccc•
-   cccccccccccccc    •••••    cccccccccccccc
-   cccc•••ccccccccccccc   ccccccccccc•••ccc•
-             ••ccccccccccccc ••c•••
-              cccc ••ccccccccccccc
-     cccccccccccccccccc ••ccccccccccccccccc
-     cccccccccc••••           ••ccccccccccc•
-      •ccccc•                      ••cccc••
-        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+ $luc."$logo\n\n".
  $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thuong.$hong."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
