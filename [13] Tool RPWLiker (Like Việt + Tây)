@@ -160,9 +160,7 @@ $weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\0
 $thuong = $do."[".$luc."●".$do."]".$trang." => ";
     $logo = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool RPW Liker Đa Luồng\n".
-
-$luc."$logo\n\n".
-
+ $luc."$logo\n\n".
  $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thuong.$hong."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
