@@ -1,5 +1,8 @@
 error_reporting(0);
 session_start();
+
+$logo = file_get_contents('https://raw.githubusercontent.com/quangchien1/quangchien1/main/logo');
+
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 $ip = file_get_contents('http://kiemtraip.com/raw.php');
 $_SESSION['useragent'] = 'Mozilla/5.0 (Linux; Android 8.1.0; Redmi Note 3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.104 Mobile Safari/537.36';
@@ -50,33 +53,7 @@ $weekday = strtolower($weekday);switch($weekday) { case 'monday':
               $weekday = "\033[1;33mCN"; break; }
 $banner = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
   $thuong.$vang."Tool Nuôi Facebook Đa Cookie\n".
-    $luc."
-                     ccccc
-                ccccccccccccccc
-             ccccccccccccccccccccc
-            ccccccccccccccccccccccc
-           ccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccccccccccccccccccccccc
-          ccccccc•   •ccc•   •ccccccc
-          •cccc•      ccc       cccc•
-           cccc       ccc       cccc
-           cccc      ccccc     cccc
-            •cccccccccccccccccccc•
-             •cccccccc• •ccccccc•
-               ccccccccccccccccc
-                cc•c•c•c•c•c•cc
-     ccc        cccc c c c cccc       ccc
-    ccccc        ccccccccccccc       ccccc
-   ••ccccccc      •ccccccccc•     cccccccc•
-   cccccccccccccc    •••••    cccccccccccccc
-   cccc•••ccccccccccccc   ccccccccccc•••ccc•
-             ••ccccccccccccc ••c•••
-              cccc ••ccccccccccccc
-     cccccccccccccccccc ••ccccccccccccccccc
-     cccccccccc••••           ••ccccccccccc•
-      •ccccc•                      ••cccc••
-        ccc•     VŨ QUANG CHIẾN      ccc•\n\n".
+  $luc."$logo\n\n".
   $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
   $thuong.$hong."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
@@ -192,7 +169,7 @@ if (strpos($nhap ,'4') !== false ){ array_push($list_cx, 'PHANNO');}
 if (strpos($nhap ,'5') !== false ){ array_push($list_cx, 'WOW');}
 if (strpos($nhap ,'6') !== false ){ array_push($list_cx, 'BUON');}
 if (strpos($nhap ,'7') !== false ){ array_push($list_cx, 'LOVE');}
- if (count($list_cx) == 0){exit($do."Vui Lòng Chọn Ít Nhất 1 Nhiệm Vụ.     \n");}
+ if (count($list_cx) == 0){exit($do."Vui Lòng Chọn Ít Nhất 1 Nhiệm Vụ.     \n");}
 echo $thuong.$luc."Nhập Delay: $trang";
 $delay=trim(fgets(STDIN));
 //if (count($khoCMT) >= 1 ){
