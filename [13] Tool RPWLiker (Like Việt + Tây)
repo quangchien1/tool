@@ -157,10 +157,8 @@ $nam = date("Y");
 $weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
 $thuong = $do."[".$luc."●".$do."]".$trang." => ";
     $logo = "\033[1;32m╔═══════════════════════════════════════════════════════════╗\n".
-  $thuong.$vang."$logo\n".
-/*
+$thuong.$vang."Tool RPW Liker Đa Luồng\n".
  $luc."$logo\n\n".
-*/
  $thuong.$xnhac."Hôm Nay \033[1;36m$weekday \033[1;33mNgày \033[1;36m$ngay \033[1;33mTháng \033[1;36m$thang \033[1;33mNăm \033[1;36m$nam$end\033[0;00m\n".
  $thuong.$hong."IP Tool Của Bạn: \033[1;97m$ip\n".
  $luc."╚═══════════════════════════════════════════════════════════╝\n";
