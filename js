@@ -1,0 +1,1 @@
+{"email": "quangchienvqc@gmail.com", "service": "YouTube", "function": "music", "playlist_links": ["https://www.youtube.com/playlist?list=PLEeKop-lp6ejkszpplxGXXKIuIccTCq8A", "https://www.youtube.com/playlist?list=PLEeKop-lp6ejkszpplxGXXKIuIccT"], "channel_ids": ["gsdee-df43", "vsew13-scqeeeeeeeeeeeeeeeeeeeeeeeeee"]}
